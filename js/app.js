@@ -24,8 +24,8 @@ const emptyState       = document.getElementById('emptyState');
 const previewSubtotal  = document.getElementById('previewSubtotal');
 const previewAmount    = document.getElementById('previewAmount');
 
-var compras = [];
-var filtroActivo = 'all';
+let compras = [];
+let filtroActivo = 'all';
 
 const inventario = {
   vip:     { precio: 5000, stock: 10, vendidas: 0 },
@@ -143,12 +143,14 @@ function actualizarPreview() {
 }
 
 function generarRotacionVip() {
-  const rotacion = (Math.random() * 6 - 3).toFixed(2);
+  const randomValue = crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32;
+  const rotacion = (randomValue * 6 - 3).toFixed(2);
   return rotacion;
 }
 
 function generarRotacionGeneral() {
-  const rotacion = (Math.random() * 4 - 2).toFixed(2);
+  const randomValue = crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32;
+  const rotacion = (randomValue * 4 - 2).toFixed(2);
   return rotacion;
 }
 
