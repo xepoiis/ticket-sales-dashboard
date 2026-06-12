@@ -174,13 +174,12 @@ function cambiarFiltro(nuevoFiltro) {
 
   actualizarTabla();
   actualizarContadores();
-  return;
   const resumen = compras.length + ' compras registradas.';
   console.log(resumen);
 }
 
 
-// TODO: agregar funcionalidad para exportar el historial de compras a CSV.
+
 // ─── Binding de eventos ───────────────────────────────────────────────────────
 form.addEventListener('submit', registrarCompra);
 
